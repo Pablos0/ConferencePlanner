@@ -100,3 +100,8 @@ Function call:
 
 
 Is needed review why TOTAL COST FOR EVENT is being read it as NaN and Unit Costs doesnt have $
+
+
+## Link to Practice Project instructions 
+
+https://author-ide.skills.network/render?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZF9pbnN0cnVjdGlvbnNfdXJsIjoiaHR0cHM6Ly9jZi1jb3Vyc2VzLWRhdGEuczMudXMuY2xvdWQtb2JqZWN0LXN0b3JhZ2UuYXBwZG9tYWluLmNsb3VkL3dmTXF1bTFCNHVuaThvWmYyaUlUY0EvcHJhY3RpY2UlMjBwcm9qZWN0JTIwb3ZlcnZpZXctdjEubWQiLCJ0b29sX3R5cGUiOiJpbnN0cnVjdGlvbmFsLWxhYiIsImFkbWluIjpmYWxzZSwiaWF0IjoxNzE2MjEwMjIxfQ.0A3TAYPKdJS37TnCfswmWH84zuP877ZrW0FevsOCtVE 
