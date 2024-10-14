@@ -2,7 +2,7 @@
 
 ## avSlice.jsx
 
-\`\`\`
+\`\`\`jsx
 import { createSlice } from "@reduxjs/toolkit";
 
 export const avSlice = createSlice({
@@ -66,7 +66,7 @@ export default avSlice.reducer;
 
 ## archivo mealsSlice.jsx
 
-\`\`\` 
+\`\`\`jsx
 import { createSlice } from '@reduxjs/toolkit';
 export const mealsSlice = createSlice({
   name: 'meals',
@@ -90,7 +90,7 @@ export default mealsSlice.reducer;
 
 ## Archivo store.js
 
-\`\`\`
+\`\`\`javascript 
 import { configureStore } from '@reduxjs/toolkit';
 import venueReducer from './VenueSlice';
 import avReducer from './avSlice';
@@ -199,7 +199,7 @@ export default venueSlice.reducer;
 
 ## Archivo ConferenceEvent.jsx
 
-\`\`\`
+\`\`\`jsx 
 import React, { useState } from "react";
 import "./ConferenceEvent.css";
 import TotalCost from "./TotalCost";
