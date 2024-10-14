@@ -97,3 +97,6 @@ Function call:
 -- Lastly, the component displays the total cost of all selected venue items.
 
 <div className="total_cost">Total Cost: ${venueTotalCost}</div>
+
+
+Is needed review why TOTAL COST FOR EVENT is being read it as NaN and Unit Costs doesnt have $

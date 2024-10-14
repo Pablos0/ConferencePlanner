@@ -37,6 +37,7 @@ export const venueSlice = createSlice({
     },
   
   ],
+  
   reducers: { // icrements and decrements shoulb be inside reducers
    
     incrementQuantity: (state, action) => {

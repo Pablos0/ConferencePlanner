@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "./ConferenceEvent.css";
 import TotalCost from "./TotalCost";
+import { toggleMealSelection } from "./mealsSlice";
+import { decrementAvQuantity, incrementAvQuantity } from "./avSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementQuantity, decrementQuantity } from "./venueSlice";
-import './avSlice.js'; // review code line
-import './store,js'; // review code line 
-import { decrementAvQuantity, incrementAvQuantity } from "./avSlice.js";
-import { toggleMealSelection } from "./mealsSlice.js";
+import { incrementQuantity, decrementQuantity } from "./VenueSlice";
  
 const ConferenceEvent = () => {
     const [showItems, setShowItems] = useState(false);
@@ -16,13 +14,6 @@ const ConferenceEvent = () => {
     const mealsItems = useSelector((state) => state.meals); // review if is in the correct line
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
-    const avTotalCost = calculateTotalCost("av");
-    const mealsTotalCost = calculateTotalCost("meals");
-    const totalCosts = {
-        venue: venueTotalCost,
-        av: avTotalCost,
-        meals: mealsTotalCost,
-    };
 
     
     const handleToggleItems = () => {
@@ -108,7 +99,7 @@ const ConferenceEvent = () => {
                         {items.map((item, index) => (
                             <tr key={index}>
                                 <td>{item.name}</td>
-                                <td>{item.cost}</td>
+                                <td>${item.cost}</td>
                                 <td>
                                     {item.type === "meals" || item.numberOfPeople ? `For ${numberOfPeople} people` : item.quantity}
                                 </td>
@@ -144,6 +135,8 @@ const ConferenceEvent = () => {
       };
 
     const venueTotalCost = calculateTotalCost("venue");
+    const avTotalCost = calculateTotalCost("av");
+    const mealsTotalCost = calculateTotalCost("meals");
 
     const navigateToProducts = (idType) => {
         if (idType == '#venue' || idType == '#addons' || idType == '#meals') {
@@ -152,6 +145,11 @@ const ConferenceEvent = () => {
           }
         }
       }
+        const totalCosts = {
+            venue: venueTotalCost,
+            av: avTotalCost,
+            meals: mealsTotalCost,
+        };
 
     return (
         <>
@@ -222,8 +220,7 @@ const ConferenceEvent = () => {
               onClick={() => handleAddToCart(index)}
             >
              &#43;
-            </button>
-            
+            </button>  
             
           </div>
         )}
@@ -239,9 +236,7 @@ const ConferenceEvent = () => {
 
 
                                 <div className="text">
-
                                     <h1> Add-ons Selection</h1>
-
                                 </div>
                                 <div className="addons_selection">
                                     {avItems.map((item, index) => (
@@ -260,7 +255,7 @@ const ConferenceEvent = () => {
                                     ))}
 
                                 </div>
-                                <div className="total_cost">Total Cost: {avTotalCost}</div>
+                                <div className="total_cost">Total Cost: ${avTotalCost}</div>
 
                             </div>
 
@@ -293,8 +288,7 @@ const ConferenceEvent = () => {
                                         </div>    
                                     ))} {/* This line of code create an array */}
                                 </div>
-                                <div className="total_cost">Total Cost: {mealsTotalCost}</div>
-
+                                <div className="total_cost">Total Cost: ${mealsTotalCost}</div>
 
                             </div>
                         </div>
